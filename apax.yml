@@ -1,0 +1,33 @@
+name: '@ax-showcase/io'
+version: 0.0.0-placeholder # correct version will be set by script
+author: Siemens AG
+type: lib
+variables:
+  APAX_BUILD_ARGS:
+    - '--log Debug'
+    - '--simulation'
+  # APAX_TEST_ARGS:
+  #   - --only-meta true
+  #   - --machine-readable true
+  #   - --nologo
+  #   - '--output "testResults"'
+targets:
+  - '1500'
+  - 'axunit-llvm'
+scripts:
+  clean:
+    - 'clean-tests'
+  "pretest": "apax build"
+dependencies:
+  "@ax-showcase/mocks": 0.2.0
+  "@ax/system-timer": 0.4.2
+devDependencies:
+  '@ax-showcase/ax-sdk': 0.2.449
+registries:
+  '@ax-showcase': 'https://npm.pkg.github.com/'
+files:
+  - 'README.md'
+  - 'LICENSE.md'
+  - 'doc'
+  - 'src' # ship library with source
+  # - 'bin/1500/'   # ship library with binary
