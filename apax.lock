@@ -2,24 +2,6 @@
 # yarn lockfile v1
 
 
-"@ax-showcase/ax-sdk@0.2.449":
-  version "0.2.449"
-  resolved "https://npm.pkg.github.com/download/@ax-showcase/ax-sdk/0.2.449/88bc7cc6da116f951ed0922b39e79a380d1f28f7ebb60aba3a0c9a70f8dfb648#cb6ed9815a02d56b0a5851c296c8ae187476c1ff"
-  integrity sha512-SqW4MJEiymJhBFmdMffnfJlsUEfvY5SOyKLXbMbXe1WGhXWmw/TcY/JJOkqAM8q08zdcg30ySwBpE+Fn5Sunew==
-  dependencies:
-    "@ax-showcase/snippetscollection" "0.2.1"
-    "@ax/sdk" "0.2.449"
-
-"@ax-showcase/mocks@0.2.0":
-  version "0.2.0"
-  resolved "https://npm.pkg.github.com/download/@ax-showcase/mocks/0.2.0/ed3c549f726252defe80cd63956cddea4f13c44f7693b45115df068cec6f9a07#478b4cd4d1a92bf40a5e8b015d9bfdaa784dffd9"
-  integrity sha512-na7ANDmgb5WxwpdGFlMgmniWglx00ouqdZZ7l9O9LGU290NBQjXD4GvTaSmXLpetJc7b40fG64K6pk1OdxcGuQ==
-
-"@ax-showcase/snippetscollection@0.2.1":
-  version "0.2.1"
-  resolved "https://npm.pkg.github.com/download/@ax-showcase/snippetscollection/0.2.1/5a35b139fd3d1bc9b8ea55117f85b0c18a77e78c5d9f00e2c1340f7164b4a2c1#8fb89d2f5141ce74cd5dbba2f364f4f5aefbf250"
-  integrity sha512-4U13ph8tCNk/Ob0x7dvXhAMOuQB1K3fCOYIHyBZ9gTHIXzQN+s42t2sAggadgzqYAyNQpxry9MO3xmHkyzlxqg==
-
 "@ax/apax-build@0.4.1":
   version "0.4.1"
   resolved "https://apax-prod-734703289705.d.codeartifact.eu-central-1.amazonaws.com:443/npm/ax/@ax/apax-build/-/apax-build-0.4.1.tgz#634fd5faf0f1f63dfd731fbf66f031043873dee6"
@@ -362,3 +344,8 @@
   version "1.25.42"
   resolved "https://apax-prod-734703289705.d.codeartifact.eu-central-1.amazonaws.com:443/npm/ax/@ax/third-party-licenses-st-compiler/-/third-party-licenses-st-compiler-1.25.42.tgz#a78ce717cdd82ee626d296a3b357699422684798"
   integrity sha512-ek9/tVzGtSMbnUCXw3s5o07eA61bd0H8k366mPV+lxgRitzXy59LHf2FCSNRT2P++LabLYkfuVu2z43malyf3g==
+
+"@simatic-ax/mocks@0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@simatic-ax/mocks/0.0.1/c24d2360e4a4fa86fa2cc5fd3e60e2f7bbaf0ddb6409f5eeb0c56b838a21bba6#aa10cf328415c1d63b80855d8014d64636a5bbee"
+  integrity sha512-iLWX9Y/bte+kh2q++33qNPsQ0c6F13lQgBrmqDHuHyYAwEAUfQWCB87VBwQLPhMvOQhMyf2hSa+qOlTs5yQqYg==
