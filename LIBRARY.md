@@ -9,21 +9,3 @@
 3. Create a new GitLab/GitHub project
 4. Clone the GitLab/GitHub project, e. g. `git clone git@github.com:AX-Showcase/my-lib.git`
 5. Open a shell in the repo directory
-
-
-## Steps for creation
-
-1. `apax init --lib @ax-showcase/my-lib`
-2. `cd ax-showcase-my-lib`
-3. `touch LIBRARY.md`
-4. `nano README.md`
-5. `nano LICENSE.md`
-6. `nano .gitignore`
-7. `nano apax.yml`
-8. `cd ..`
-
-
-## Steps for package
-
-1. `apax run deliver`
-2. `apax run publish`
