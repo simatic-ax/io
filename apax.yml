@@ -16,7 +16,7 @@ scripts:
     - rm *.apax.tgz -f
 dependencies:
   "@ax/system-timer": 0.4.2
-  "@simatic-ax/mocks": 0.0.2
+  "@simatic-ax/mocks": 0.0.3
 devDependencies:
   '@ax/sdk': 0.2.449
 registries:
