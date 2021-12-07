@@ -14,6 +14,12 @@ scripts:
   publishlib:
     - apax publish --package *.apax.tgz --registry $GITHUB_REG_URL
     - rm *.apax.tgz -f
+  createpackage:
+    - apax build
+    - apax test
+    - apax version $1
+    - apax pack
+    - apax publishlib
 dependencies:
   "@ax/system-timer": 1.0.12
   "@simatic-ax/mocks": 0.1.0
@@ -24,7 +30,6 @@ registries:
 files:
   - 'README.md'
   - 'LICENSE.md'
-  - 'Legal.md'
   - 'doc'
   - 'src' # ship library with source
   # - 'bin/1500/'   # ship library with binary
