@@ -1,4 +1,4 @@
-NAMESPACE Siemens.AX.IO.Input
+NAMESPACE Simatic.Ax.IO.Input
     /// <summary>
     /// QBad-Status of binary input signal
     /// </summary>

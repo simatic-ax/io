@@ -1,4 +1,4 @@
-NAMESPACE Siemens.AX.IO.Output
+NAMESPACE Simatic.Ax.IO.Output
     /// <summary>
     /// Class to handle double integer output values
     /// </summary>

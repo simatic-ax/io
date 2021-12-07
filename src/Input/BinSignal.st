@@ -1,4 +1,4 @@
-NAMESPACE Siemens.Ax.IO.Input
+NAMESPACE Simatic.Ax.IO.Input
     CLASS BinSignal EXTENDS InputBase IMPLEMENTS IBinSignal
         VAR PUBLIC
             invert : BOOL := FALSE;

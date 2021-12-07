@@ -1,4 +1,4 @@
-# Siemens.AX.IO
+# Simatic.Ax.IO
 
 Version: 0.0.0-placeholder
 
@@ -7,6 +7,6 @@ Version: 0.0.0-placeholder
 
 The library consists of the following namespaces:
 
-- `Siemens.AX.IO`
-- `Siemens.AX.IO.Input`
-- `Siemens.AX.IO.Output`
+- `Simatic.Ax.IO`
+- `Simatic.Ax.IO.Input`
+- `Simatic.Ax.IO.Output`

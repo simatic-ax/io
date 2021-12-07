@@ -1,4 +1,4 @@
-NAMESPACE Siemens.AX.IO.Input
+NAMESPACE Simatic.Ax.IO.Input
     /// <summary>
     /// Class to handle INT input values 
     /// </summary>

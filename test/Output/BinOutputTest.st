@@ -1,6 +1,6 @@
-// USING Siemens.AX.IO.Output;
+// USING Simatic.Ax.IO.Output;
 
-// NAMESPACE Siemens.AX.IO.Output.Test
+// NAMESPACE Simatic.Ax.IO.Output.Test
 
 //     //-----------------------------------------------------------
 //     // test SetQ(value)

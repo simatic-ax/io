@@ -1,4 +1,4 @@
-NAMESPACE Siemens.Ax.IO.Input
+NAMESPACE Simatic.Ax.IO.Input
     INTERFACE IBinSignal
         METHOD Q : BOOL
         END_METHOD

@@ -1,4 +1,4 @@
-NAMESPACE Siemens.AX.IO.Output
+NAMESPACE Simatic.Ax.IO.Output
     /// <summary>
     /// Class to handle long REAL output values 
     /// </summary>

@@ -1,4 +1,4 @@
-NAMESPACE Siemens.Ax.IO.Output
+NAMESPACE Simatic.Ax.IO.Output
     INTERFACE IBinOutput
         METHOD SetQ
             VAR_INPUT

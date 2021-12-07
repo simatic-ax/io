@@ -1,7 +1,7 @@
-USING Siemens.AX.IO.Input;
+USING Simatic.Ax.IO.Input;
 USING AxUnit;
 
-NAMESPACE Siemens.AX.IO.Input.Test
+NAMESPACE Simatic.Ax.IO.Input.Test
 
     {TestFixture}
     CLASS WordInputTest

@@ -1,4 +1,4 @@
-NAMESPACE Siemens.AX.IO.Output
+NAMESPACE Simatic.Ax.IO.Output
     /// <summary>
     /// Class BinOutput
     /// An OOP concept to handle digital outputs as a own object

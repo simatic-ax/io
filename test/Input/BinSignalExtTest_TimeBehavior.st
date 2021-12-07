@@ -1,9 +1,9 @@
 USING AxUnit;
-USING Siemens.AX.IO.Input;
+USING Simatic.Ax.IO.Input;
 USING System.Timer;
 //USING AxUnit;
 
-NAMESPACE Siemens.AX.IO.Input.Test
+NAMESPACE Simatic.Ax.IO.Input.Test
 
     {TestFixture}
     CLASS BinSignalExt_TimingTest
@@ -20,7 +20,7 @@ NAMESPACE Siemens.AX.IO.Input.Test
 
         {Test}
         METHOD PUBLIC TestOnDelay_10ms_After_signal_true_expect_true
-            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Siemens.AX.Mocks.OnDelayMock_true');
+            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Simatic.Ax.Mocks.OnDelayMock_true');
             o.ondelay := T#10ms;
             o.ReadCyclic(signal := TRUE);
             Assert.Equal(expected := TRUE, actual := o.Q());
@@ -29,11 +29,11 @@ NAMESPACE Siemens.AX.IO.Input.Test
         {Test}
         METHOD PUBLIC TestOnDelay_10ms_signal_goes_to_False_expect_false
             //this.TestOnDelay_10ms_After_signal_true_expect_true();
-            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Siemens.AX.Mocks.OnDelayMock_true');
+            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Simatic.Ax.Mocks.OnDelayMock_true');
             o.ondelay := T#10ms;
             o.ReadCyclic(signal := TRUE);
             Assert.Equal(expected := TRUE, actual := o.Q());
-            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Siemens.AX.Mocks.OnDelayMock_false');
+            AxUnit.Mocking.Mock('System.Timer.OnDelay', 'Simatic.Ax.Mocks.OnDelayMock_false');
             o.ReadCyclic(signal := FALSE);
             Assert.Equal(expected := FALSE, actual := o.Q());
         END_METHOD
@@ -41,13 +41,13 @@ NAMESPACE Siemens.AX.IO.Input.Test
 
         {Test}
         METHOD PUBLIC TestOffDelay_10ms_After_signal_true_expect_true
-            AxUnit.Mocking.Mock('System.Timer.OffDelay', 'Siemens.AX.Mocks.OffDelayMock_true');
+            AxUnit.Mocking.Mock('System.Timer.OffDelay', 'Simatic.Ax.Mocks.OffDelayMock_true');
             o.offdelay := T#10ms;
             o.ReadCyclic(signal := TRUE);
             o.ReadCyclic(signal := FALSE);
             Assert.Equal(expected := TRUE, actual := o.Q());
 
-            AxUnit.Mocking.Mock('System.Timer.OffDelay', 'Siemens.AX.Mocks.OffDelayMock_false');
+            AxUnit.Mocking.Mock('System.Timer.OffDelay', 'Simatic.Ax.Mocks.OffDelayMock_false');
             o.ReadCyclic(signal := FALSE);
             Assert.Equal(expected := FALSE, actual := o.Q());
         END_METHOD

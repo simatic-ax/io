@@ -1,5 +1,5 @@
 USING System.Timer;
-NAMESPACE Siemens.AX.IO.Input
+NAMESPACE Simatic.Ax.IO.Input
     CLASS BinSignalExt EXTENDS BinSignal
         VAR PUBLIC 
             ondelay : TIME;
