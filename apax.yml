@@ -1,5 +1,5 @@
 name: '@simatic-ax/io'
-version: 0.0.3
+version: 0.0.4
 author: Siemens AG
 type: lib
 variables:
