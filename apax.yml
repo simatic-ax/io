@@ -1,5 +1,5 @@
 name: '@simatic-ax/io'
-version: 0.1.1
+version: 0.1.2
 author: Siemens AG
 type: lib
 variables:
@@ -22,9 +22,10 @@ scripts:
     - apax publishlib
 dependencies:
   "@ax/system-timer": 1.0.12
-  "@simatic-ax/mocks": 0.1.1
 devDependencies:
-  '@ax/sdk': 1.0.63
+  '@ax/sdk': 1.0.127
+  "@simatic-ax/mocks": 0.1.1
+  "@simatic-ax/snippetscollection": 0.0.4
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 files:
