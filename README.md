@@ -11,6 +11,12 @@ apax add @simatic-ax/io
 
 > to install this package you need to login into the GitHub registry. You'll find more information [here](https://github.com/simatic-ax/.github/blob/main/doc/personalaccesstoken.md) 
 
+## Namespace
+```
+Simatic.Ax.IO.Input
+Simatic.Ax.IO.Output
+```
+
 ## Available Classes
 
 |||
