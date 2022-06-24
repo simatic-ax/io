@@ -13,7 +13,7 @@ jobs:
       - name: "Clone repository for CI workflows"
         uses: actions/checkout@v3
         with:
-          repository: kruegerfelix/ax_ci_workflows
+          repository: simatic-ax/ax_ci_workflows
           token: ${{ secrets.CI_KIT_TOKEN }}
           path: ax_ci_workflows
       - name: "Install apax and dependencies"
@@ -48,7 +48,7 @@ jobs:
       - name: "Clone repository for CI workflows"
         uses: actions/checkout@v3
         with:
-          repository: kruegerfelix/ax_ci_workflows
+          repository: simatic-ax/ax_ci_workflows
           token: ${{ secrets.CI_KIT_TOKEN }}
           path: ax_ci_workflows
       - name: "Install apax and dependencies"
@@ -81,7 +81,7 @@ jobs:
       - name: "Clone repository for CI workflows"
         uses: actions/checkout@v3
         with:
-          repository: kruegerfelix/ax_ci_workflows
+          repository: simatic-ax/ax_ci_workflows
           token: ${{ secrets.CI_KIT_TOKEN }}
           path: ax_ci_workflows
 
@@ -112,7 +112,7 @@ jobs:
       - name: "Clone repository for CI workflows"
         uses: actions/checkout@v3
         with:
-          repository: kruegerfelix/ax_ci_workflows
+          repository: simatic-ax/ax_ci_workflows
           token: ${{ secrets.CI_KIT_TOKEN }}
           path: ax_ci_workflows
 
