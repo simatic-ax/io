@@ -1,0 +1,57 @@
+name: test-apax
+on:
+  push:
+
+jobs:
+  build:
+    name: "Build apax library"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Clone the library repository"
+        uses: actions/checkout@v3
+
+      - name: "Clone repository for CI workflows"
+        uses: actions/checkout@v3
+        with:
+          repository: kruegerfelix/ax_ci_workflows
+          token: ${{ secrets.CI_KIT_TOKEN }}
+          path: ax_ci_workflows
+      - name: "Install apax and dependencies"
+        uses: ./ax_ci_workflows/.github/actions/setup-apax-runner
+        with:
+          apax-access-token: ${{ secrets.APAX_TOKEN }}
+      - name: "Login to github registry"
+        run: |
+          apax login --registry "https://npm.pkg.github.com" --password ${{ secrets.CI_KIT_TOKEN }}
+      - name: "Build apax library"
+        uses: ./ax_ci_workflows/.github/actions/build-apax-package
+        with:
+          library-directory: ${{ github.workspace }}
+          apax-access-token: ${{ secrets.APAX_TOKEN }}
+
+  test:
+    name: "Test apax library"
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: "Clone the library repository"
+        uses: actions/checkout@v3
+
+      - name: "Clone repository for CI workflows"
+        uses: actions/checkout@v3
+        with:
+          repository: kruegerfelix/ax_ci_workflows
+          token: ${{ secrets.CI_KIT_TOKEN }}
+          path: ax_ci_workflows
+
+      - name: "Install apax and dependencies"
+        uses: ./ax_ci_workflows/.github/actions/setup-apax-runner
+        with:
+          apax-access-token: ${{ secrets.APAX_TOKEN }}
+
+      - name: "Build apax library"
+        uses: ./ax_ci_workflows/.github/actions/test-apax-package
+        with:
+          library-directory: ${{ github.workspace }}
+          apax-access-token: ${{ secrets.APAX_TOKEN }}
