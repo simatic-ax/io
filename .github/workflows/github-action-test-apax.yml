@@ -50,6 +50,10 @@ jobs:
         with:
           apax-access-token: ${{ secrets.APAX_TOKEN }}
 
+      - name: "Login to github registry"
+        run: |
+          apax login --registry "https://npm.pkg.github.com" --password ${{ secrets.CI_KIT_TOKEN }}
+
       - name: "Build apax library"
         uses: ./ax_ci_workflows/.github/actions/test-apax-package
         with:
