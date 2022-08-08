@@ -21,11 +21,11 @@ scripts:
     - apax pack
     - apax publishlib
 dependencies:
-  "@ax/system-timer": 1.0.12
+  "@ax/system-timer": 2.0.1
 devDependencies:
-  '@ax/sdk': 1.0.127
-  "@simatic-ax/mocks": 0.1.1
-  "@simatic-ax/snippetscollection": 0.0.4
+  '@ax/sdk': 2.0.3
+  "@simatic-ax/mocks": 0.1.3
+  "@simatic-ax/snippetscollection": 0.0.13
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 files:
