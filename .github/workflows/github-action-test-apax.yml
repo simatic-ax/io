@@ -74,7 +74,7 @@ jobs:
           --registry "https://npm.pkg.github.com" \
           --password ${{ secrets.CI_KIT_TOKEN }}
 
-      - name: "Install workspace dependencies and test"
-        uses: ./actions/.github/actions/apax-test
-        with:
-          apax-access-token: ${{ secrets.APAX_TOKEN }}
+      # - name: "Install workspace dependencies and test"
+      #   uses: ./actions/.github/actions/apax-test
+      #   with:
+      #     apax-access-token: ${{ secrets.APAX_TOKEN }}
