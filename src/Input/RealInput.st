@@ -1,7 +1,5 @@
 NAMESPACE Simatic.Ax.IO.Input
-    /// <summary>
     /// Class to handle REAL input values 
-    /// </summary>
     CLASS RealInput EXTENDS InputBase
 
         VAR PRIVATE
@@ -9,20 +7,16 @@ NAMESPACE Simatic.Ax.IO.Input
             _default : REAL := REAL#0.0;
         END_VAR
 
-        /// <summary>
         /// The max and min value of datataype LReal
-        /// </summary>
         VAR CONSTANT PUBLIC
             MAX : REAL := REAL#+3.402823e+38;
             MIN : REAL := REAL#-3.402823e+38;
         END_VAR
-
-        /// <summary>
+        
         /// Read the input value from Input area of type Real
-        /// </summary>
-        /// <param name="value">The integer input value</param>
-        /// <param name="valid">The input value is valid (e.g. periphery is ok)</param>
-        /// <param name="default">Default value if valid = FALSE</param>
+        /// The integer input value
+        /// The input value is valid (e.g. periphery is ok)
+        /// Default value if valid = FALSE
         METHOD PUBLIC ReadCyclic
             VAR_INPUT
                 value : DWORD;
@@ -35,10 +29,8 @@ NAMESPACE Simatic.Ax.IO.Input
             _default := default;
         END_METHOD
 
-        /// <summary>
         /// Returns the actual value of integer
-        /// </summary>
-        /// <returns>Actual value of the REAL input</returns>
+        /// Actual value of the REAL input
         METHOD PUBLIC Q : REAL
             IF (NOT(THIS.QBad())) THEN 
                 Q := _value;

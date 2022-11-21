@@ -1,7 +1,5 @@
 NAMESPACE Simatic.Ax.IO.Input
-    /// <summary>
     /// Class to handle LREAL input values 
-    /// </summary>
     CLASS LRealInput EXTENDS InputBase
 
         VAR PRIVATE
@@ -9,20 +7,16 @@ NAMESPACE Simatic.Ax.IO.Input
             _default : LREAL := LREAL#0.0;
         END_VAR
 
-        /// <summary>
         /// The max and min value of datataype LReal
-        /// </summary>
         VAR CONSTANT PUBLIC
             MAX : LREAL := LREAL#1.79769313486231e+308;
             MIN : LREAL := LREAL#-1.79769313486231e+308;
         END_VAR
 
-        /// <summary>
         /// Read the input value from Input area of type Real
-        /// </summary>
-        /// <param name="value">The integer input value</param>
-        /// <param name="valid">The input value is valid (e.g. periphery is ok)</param>
-        /// <param name="default">Default value if valid = FALSE</param>
+        /// The integer input value
+        /// The input value is valid (e.g. periphery is ok)
+        /// Default value if valid = FALSE
         METHOD PUBLIC ReadCyclic
             VAR_INPUT
                 value : LWORD;
@@ -35,12 +29,10 @@ NAMESPACE Simatic.Ax.IO.Input
             _default := default;
         END_METHOD
 
-        /// <summary>
         /// Read the input value from Input area of type Real
-        /// </summary>
-        /// <param name="value">The LREAL input value</param>
-        /// <param name="valid">The input value is valid (e.g. periphery is ok)</param>
-        /// <param name="default">Default value if valid = FALSE</param>
+        /// The LREAL input value
+        /// The input value is valid (e.g. periphery is ok)
+        /// Default value if valid = FALSE
         METHOD PUBLIC ReadCyclic
             VAR_INPUT
                 value : LREAL;
@@ -53,10 +45,8 @@ NAMESPACE Simatic.Ax.IO.Input
             _default := default;
         END_METHOD
 
-        /// <summary>
         /// Returns the actual value of integer
-        /// </summary>
-        /// <returns>Actual value of the LREAL input</returns>
+        /// Actual value of the LREAL input
         METHOD PUBLIC Q : LREAL
             IF (NOT(THIS.QBad())) THEN 
                 Q := _value;

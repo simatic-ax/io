@@ -1,18 +1,14 @@
 NAMESPACE Simatic.Ax.IO.Output
-    /// <summary>
+    
     /// Class to handle integer output values
-    /// </summary>
     CLASS IntOutput EXTENDS OutputBase
         VAR
             _actualValue : INT;
             _oldValue : INT;
         END_VAR
         
-        
-        /// <summary>
         /// Set the value of class IntOutput
-        /// </summary>
-        /// <param name="value">Value to set</param>
+        /// Value to set
         METHOD PUBLIC SetValue
             VAR_INPUT
                 value : INT;
@@ -20,10 +16,9 @@ NAMESPACE Simatic.Ax.IO.Output
             _actualValue := value;
         END_METHOD
 
-        /// <summary>
+        
         /// Write the value to the periphery. But class can also be uses for none hardware access
-        /// </summary>
-        /// <param name="Q">The actual value of the INT output</param>
+        /// The actual value of the INT output
         METHOD PUBLIC WriteCyclic
             VAR_OUTPUT
                 Q : INT;

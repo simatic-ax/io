@@ -1,16 +1,12 @@
 NAMESPACE Simatic.Ax.IO.Input
-    /// <summary>
     /// QBad-Status of binary input signal
-    /// </summary>
     CLASS InputBase
         VAR PROTECTED
             _isQBad : BOOL; // TRUE : signal is invalid
         END_VAR
 
-    /// <summary>
     /// Set the status to QBad
-    /// </summary>
-    /// <param name="value">OnDelay value for BinSignal</param>
+    /// OnDelay value for BinSignal
     METHOD PROTECTED QBad
         VAR_INPUT
             value : BOOL;
@@ -18,10 +14,8 @@ NAMESPACE Simatic.Ax.IO.Input
         _isQBad := value; 
     END_METHOD
 
-    /// <summary>
     /// Returns the QBad-Status of BinSignal. If valid = FALSE --> QBad = TRUE 
-    /// </summary>
-    /// <returns>The QBad-Status of BinSignal</returns>
+    /// The QBad-Status of BinSignal
     METHOD PUBLIC QBad : BOOL
         QBad := _isQBad;
         ;

@@ -1,17 +1,16 @@
 NAMESPACE Simatic.Ax.IO.Output
-    /// <summary>
+    
     /// Class to handle double integer output values
-    /// </summary>
+    
     CLASS DintOutput EXTENDS OutputBase
         VAR
             _actualValue : DINT;
             _oldValue : DINT;
         END_VAR
         
-        /// <summary>
+        
         /// Set the value of class DINTOutput
-        /// </summary>
-        /// <param name="value">Value to set</param>
+        /// Value to set
         METHOD PUBLIC SetValue
             VAR_INPUT
                 value : DINT;
@@ -19,10 +18,9 @@ NAMESPACE Simatic.Ax.IO.Output
             _actualValue := value;
         END_METHOD
 
-        /// <summary>
+        
         /// Write the value to the periphery. But class can also be uses for none hardware access
-        /// </summary>
-        /// <param name="Q">The actual value of the DINT output</param>
+        /// The actual value of the DINT output
         METHOD PUBLIC WriteCyclic
             VAR_OUTPUT
                 Q : DINT;
