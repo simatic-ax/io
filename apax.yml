@@ -13,7 +13,7 @@ targets:
 dependencies:
   "@ax/system-timer": 3.0.9
 devDependencies:
-  '@ax/sdk': 3.0.2
+  '@ax/sdk': 3.0.6
   # "@simatic-ax/mocks": 0.1.3 TEMPORARY DIABLED BEACUSE OF DISABLED MOCKING FUNCTIONALITY
   "@simatic-ax/snippetscollection": 0.0.14
 registries:
