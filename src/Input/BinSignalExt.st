@@ -11,12 +11,10 @@ NAMESPACE Simatic.Ax.IO.Input
             _signalInOld : BOOL;
         END_VAR
 
-        /// <summary>
         /// Read digital signal (must be executed in every cycle - recommendation: begin of cycle in case of digital input signals)
-        /// </summary>
-        /// <param name="signal">Digital/Boolean signal</param>
-        /// <param name="valid">signal is valid (if FALSE, the default value will be used); default = TRUE</param>
-        /// <param name="default">default value which is used, when valid 0 FALSE</param>        
+        /// Digital/Boolean signal
+        /// signal is valid (if FALSE, the default value will be used); default = TRUE
+        /// default value which is used, when valid 0 FALSE        
         METHOD PUBLIC OVERRIDE ReadCyclic
             VAR_INPUT
                 signal : BOOL;

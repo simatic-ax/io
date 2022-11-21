@@ -34,30 +34,22 @@ NAMESPACE Simatic.Ax.IO.Input
         END_METHOD
 
 
-        /// <summary>
-        /// </summary>
-        /// <RETURNs>Returns if the signal is inverted</RETURNs>
+        ///Returns if the signal is inverted
         METHOD PUBLIC IsInverted : BOOL                        
             IsInverted := invert;
         END_METHOD
 
-        /// <summary>
-        /// </summary>
-        /// <RETURNs>Returns the current status of BinSignal</RETURNs>
+        ///Returns the current status of BinSignal
         METHOD PUBLIC Q : BOOL
             Q := _statusQ;
         END_METHOD
 
-        /// <summary>
-        /// </summary>
-        /// <RETURNs>Returns if a rising edge was detected in the current cycle</RETURNs>
+        ///Returns if a rising edge was detected in the current cycle
         METHOD PUBLIC QRis : BOOL
             QRis := _statusQRis;            
         END_METHOD
 
-        /// <summary>
-        /// </summary>
-        /// <RETURNs>Returns if a falling edge was detected in the current cycle</RETURNs>
+        ///Returns if a falling edge was detected in the current cycle
         METHOD PUBLIC QFal : BOOL
             QFal := _statusQFal;
         END_METHOD
