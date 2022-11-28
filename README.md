@@ -5,14 +5,16 @@ In AX it is not possible to use variables pointing on the periphery (IOM) as ref
 ## Install this package
 
 Enter:
+
 ```cli
 apax add @simatic-ax/io
 ```
 
-> to install this package you need to login into the GitHub registry. You'll find more information [here](https://github.com/simatic-ax/.sharedstuff/blob/main/doc/personalaccesstoken.md) 
+> to install this package you need to login into the GitHub registry. You'll find more information [here](https://github.com/simatic-ax/.sharedstuff/blob/main/doc/personalaccesstoken.md)
 
 ## Namespace
-```
+
+```yml
 Simatic.Ax.IO.Input
 Simatic.Ax.IO.Output
 ```
@@ -35,7 +37,6 @@ Simatic.Ax.IO.Output
 |LRealOutput      | Evaluate and write a LREAL value |
 |RealOutput      | Evaluate and write a REAL value |
 |WordOutput      | Evaluate and write a WORD value |
-
 
 ## Contribution
 
