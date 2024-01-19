@@ -20,7 +20,7 @@ targets:
   - 'axunit-llvm'
 # Dependencies
 dependencies:
-  "@ax/system-timer": 4.0.1
+  "@ax/system-timer": 6.0.94
 devDependencies:
   '@ax/sdk': 4.0.2
   # "@simatic-ax/mocks": 0.1.3 TEMPORARY DIABLED BEACUSE OF DISABLED MOCKING FUNCTIONALITY
