@@ -8,8 +8,15 @@ NAMESPACE Simatic.Ax.IO.Input.Test
     {TestFixture}
     CLASS BinSignalTest
         VAR
-            o : BinSignal;      
+            o : BinSignal;   
+            oStateLess : BinSignalExt;     
         END_VAR
+
+        {TestSetup}
+        METHOD PUBLIC MyTestSetup
+        // Will be called before MyTest_A AND before Test_B are executed
+            o := oStateLess;
+        END_METHOD
 
         {Test}
         METHOD PUBLIC TestQ_And_expect_true
