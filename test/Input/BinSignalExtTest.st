@@ -12,9 +12,9 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             oStateLess : BinSignalExt;  
         END_VAR
 
+        // This method will be called before each test method
         {TestSetup}
         METHOD PUBLIC MyTestSetup
-        // Will be called before MyTest_A AND before Test_B are executed
             o := oStateLess;
         END_METHOD
 
