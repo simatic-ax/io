@@ -1,6 +1,6 @@
 # IO handling
 
-In AX it is not possible to use variables pointing on the periphery (IOM) as references. This disadvantage can be solved with a workaround. In this package you can find some classes, which are reading from die DI area and can write to teh DQ area in the 1500 PLCs. This classes can be used as reference. But keep in mind that you always have to call the ReadCyclic or WriteCyclic method.
+In AX it is not possible to use variables pointing on the periphery (IOM) as references. This disadvantage can be solved with a workaround. In this package you can find some classes, which are reading from die DI area and can write to the DQ area in the 1500 PLCs. This classes can be used as reference. But keep in mind that you always have to call the ReadCyclic or WriteCyclic method.
 
 ## Install this package
 
