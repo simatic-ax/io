@@ -6,7 +6,7 @@ NAMESPACE Simatic.Ax.IO.Input.Test
     {TestFixture}
     CLASS IntInputTest
         VAR
-            o : IntInput;
+            o : IntInput; 
             oMinMaxTest : IntInput;
         END_VAR
 
