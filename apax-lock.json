@@ -7,7 +7,8 @@
     "name": "@simatic-ax/io",
     "version": "0.0.0-placeholder",
     "dependencies": {
-      "@ax/system-timer": "^8.0.7"
+      "@ax/system-timer": "^8.0.7",
+      "@ax/system-math": "^8.0.7"
     },
     "devDependencies": {
       "@ax/sdk": "2411.0.0",
@@ -57,6 +58,13 @@
       "version": "8.0.7",
       "integrity": "sha512-V8iqkWqFFWur7A/yWEWyTAIBOpsIvHOXUokFYy36qUgGe8JPQQ5brzo+hPQfxGdtNmnwQwyeeadMe/J/U87KDQ==",
       "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-timer/-/system-timer-8.0.7.tgz",
+      "dependencies": {}
+    },
+    "@ax/system-math": {
+      "name": "@ax/system-math",
+      "version": "8.0.7",
+      "integrity": "sha512-W+jM3gP4BguLMJJprVvEOXkqmsNsqR3BAWmwRM2lsQ6cgMSYheuzXhpBTR3MaIYX4UYM7RXEoQ6sDEszrQ2q9A==",
+      "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-math/-/system-math-8.0.7.tgz",
       "dependencies": {}
     },
     "@ax/apax-build": {
@@ -708,13 +716,6 @@
       "version": "8.0.17",
       "integrity": "sha512-bvMaT+GcSwF9ahzqI+wHBlCDfASqnJTDHwuBgVuR68u3R9cLaoOLnosw4HBoJRlBxWyooKB9bn+u++jRaekRNg==",
       "resolved": "https://registry.simatic-ax.siemens.io/@ax/st-docs/-/st-docs-8.0.17.tgz",
-      "dependencies": {}
-    },
-    "@ax/system-math": {
-      "name": "@ax/system-math",
-      "version": "8.0.7",
-      "integrity": "sha512-W+jM3gP4BguLMJJprVvEOXkqmsNsqR3BAWmwRM2lsQ6cgMSYheuzXhpBTR3MaIYX4UYM7RXEoQ6sDEszrQ2q9A==",
-      "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-math/-/system-math-8.0.7.tgz",
       "dependencies": {}
     },
     "@ax/system-datetime": {

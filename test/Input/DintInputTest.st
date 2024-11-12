@@ -39,5 +39,34 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             Assert.Equal(expected := DINT#-2147483648, actual := oMinMaxTest.Min);
             Assert.Equal(expected := DINT#2147483647, actual := oMinMaxTest.Max);
         END_METHOD
+
+        {Test(signalValue := DINT#100, newSignalValue := DINT#100, expectedHasChanged := FALSE)}
+        {Test(signalValue := DINT#100, newSignalValue := DINT#101, expectedHasChanged := TRUE)}
+        METHOD PUBLIC CheckHasChanged
+            VAR_INPUT
+                signalValue : DINT;
+                newSignalValue : DINT;
+                expectedHasChanged : BOOL;
+            END_VAR
+
+            o.ReadCyclic(value := signalValue, valid := TRUE, default := 0);
+            o.ReadCyclic(value := newSignalValue, valid := TRUE, default := 0);
+            Assert.Equal(expected := expectedHasChanged, actual := o.HasChanged());
+        END_METHOD
+
+        {Test(signalValue := DINT#100, newSignalValue := DINT#100, tolerance := DINT#10, expectedHasChanged := FALSE)}
+        {Test(signalValue := DINT#100, newSignalValue := DINT#111, tolerance := DINT#10, expectedHasChanged := TRUE)}
+        METHOD PUBLIC CheckHasChangedWithTolerance
+            VAR_INPUT
+                signalValue : DINT;
+                newSignalValue : DINT;
+                tolerance : DINT;
+                expectedHasChanged : BOOL;
+            END_VAR
+
+            o.ReadCyclic(value := signalValue, valid := TRUE, default := 0);
+            o.ReadCyclic(value := newSignalValue, valid := TRUE, default := 0, tolerance := tolerance);
+            Assert.Equal(expected := expectedHasChanged, actual := o.HasChanged());
+        END_METHOD
     END_CLASS
 END_NAMESPACE

@@ -1,3 +1,5 @@
+USING System.Math;
+
 NAMESPACE Simatic.Ax.IO.Input
     /// Class to handle DINT input values
     CLASS DintInput EXTENDS InputBase
@@ -8,7 +10,7 @@ NAMESPACE Simatic.Ax.IO.Input
             _qBad : BOOL;
         END_VAR
 
-        /// The max and min value of datataype Dint
+        /// The max and min value of datataype DINT
         VAR CONSTANT PUBLIC
             MIN : DINT := DINT#-2147483648;
             MAX : DINT := DINT#2147483647;
@@ -17,15 +19,18 @@ NAMESPACE Simatic.Ax.IO.Input
         /// Read the input value from Input area of type Double Integer
         /// The double integer input value
         /// The input value is valid (e.g. periphery is ok)
-        /// Default value if valid = FALSE
+        /// Default value if invalid = 0
+        /// Tolerance used with HasChanged, defaults to 0
         METHOD PUBLIC ReadCyclic
             VAR_INPUT
                 value : DINT;
                 valid : BOOL := TRUE;
                 default : DINT := DINT#0;
+                tolerance : DINT := DINT#0;
             END_VAR
 
             THIS.QBad(value := NOT(valid));
+            _hasChanged := ABS(_value - value) > tolerance;
             _value := value;
             _default := default;
         END_METHOD
@@ -39,5 +44,6 @@ NAMESPACE Simatic.Ax.IO.Input
                 Q := _default;
             END_IF;     
         END_METHOD
+
     END_CLASS
 END_NAMESPACE

@@ -62,5 +62,22 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             Assert.Equal(expected := LREAL#1.79769313486231e+308, actual := oMinMaxTest.Max);
             Assert.Equal(expected :=  LREAL#-1.79769313486231e+308, actual := oMinMaxTest.Min);
         END_METHOD
+
+        {Test(signalValue := LREAL#100.0, newSignalValue := LREAL#100.0, tolerance := 0.1, expectedHasChanged := FALSE)}
+        {Test(signalValue := LREAL#100.0, newSignalValue := LREAL#101.0, tolerance := 0.1, expectedHasChanged := TRUE)}
+        {Test(signalValue := LREAL#100.0, newSignalValue := LREAL#100.2, tolerance := 0.1, expectedHasChanged := TRUE)}
+        {Test(signalValue := LREAL#100.0, newSignalValue := LREAL#100.05, tolerance := 0.1, expectedHasChanged := FALSE)}
+        METHOD PUBLIC CheckHasChanged
+            VAR_INPUT
+                signalValue : LREAL;
+                newSignalValue : LREAL;
+                tolerance : LREAL;
+                expectedHasChanged : BOOL;
+            END_VAR
+
+            o.ReadCyclic(value := signalValue, valid := TRUE, default := 0);
+            o.ReadCyclic(value := newSignalValue, valid := TRUE, default := 0, tolerance := tolerance);
+            Assert.Equal(expected := expectedHasChanged, actual := o.HasChanged());
+        END_METHOD
     END_CLASS
 END_NAMESPACE
