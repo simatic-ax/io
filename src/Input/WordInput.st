@@ -9,15 +9,15 @@ NAMESPACE Simatic.Ax.IO.Input
         END_VAR
 
         
-        /// The max and min value of datataype word
+        /// The max and min value of datataype WORD
         VAR CONSTANT PUBLIC
             MIN : WORD := WORD#16#0;
             MAX : WORD := WORD#16#FFFF;
         END_VAR
 
         
-        /// Read the input value from Input area of type Integer
-        /// The integer input value
+        /// Read the input value from Input area of type WORD
+        /// The WORD input value
         /// The input value is valid (e.g. periphery is ok)
         /// Default value if valid = FALSE
         METHOD PUBLIC ReadCyclic
@@ -28,12 +28,13 @@ NAMESPACE Simatic.Ax.IO.Input
             END_VAR
 
             THIS.QBad(value := NOT(valid));
+            _hasChanged := _value <> value;
             _value := value;
             _default := default;
         END_METHOD
 
         
-        /// Returns the actual value of integer
+        /// Returns the actual value of the WORD
         /// Actual value of the WORD input
         METHOD PUBLIC Q : WORD
             IF (NOT(THIS.QBad())) THEN 
@@ -42,5 +43,6 @@ NAMESPACE Simatic.Ax.IO.Input
                 Q := _default;
             END_IF;     
         END_METHOD
+
     END_CLASS
 END_NAMESPACE

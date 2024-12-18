@@ -12,6 +12,11 @@ NAMESPACE Simatic.Ax.IO.Input
             _statusQRis : BOOL;
             _statusQFal : BOOL;            
         END_VAR
+
+        /// Read the input value from Input area of type BOOL
+        /// The BOOL input value
+        /// The input value is valid (e.g. periphery is ok)
+        /// Default value if invalid = FALSE
         METHOD PUBLIC ReadCyclic
             VAR_INPUT
                 signal : BOOL;
@@ -28,6 +33,7 @@ NAMESPACE Simatic.Ax.IO.Input
             END_IF;
 
             _statusQ := _signalInPrefiltered;
+            _hasChanged := _signalInOld <> _signalInPrefiltered;
             _statusQRis := _statusQ AND NOT(_signalInOld);
             _statusQFal := NOT(_statusQ) AND _signalInOld;
             _signalInOld := _statusQ;

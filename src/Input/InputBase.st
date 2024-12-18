@@ -3,6 +3,7 @@ NAMESPACE Simatic.Ax.IO.Input
     CLASS InputBase
         VAR PROTECTED
             _isQBad : BOOL; // TRUE : signal is invalid
+            _hasChanged : BOOL; // TRUE : value changed between reads
         END_VAR
 
     /// Set the status to QBad
@@ -19,6 +20,11 @@ NAMESPACE Simatic.Ax.IO.Input
     METHOD PUBLIC QBad : BOOL
         QBad := _isQBad;
         ;
+    END_METHOD
+
+    /// Returns TRUE if the value has changed between this read and the one before
+    METHOD PUBLIC HasChanged : BOOL;
+        HasChanged := _hasChanged;
     END_METHOD
 
     END_CLASS

@@ -40,5 +40,19 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             AxUnit.Assert.Equal(expected := WORD#16#FFFF, actual := oMinMaxTest.Max);
 
         END_METHOD
+
+        {Test(signalValue := WORD#100, newSignalValue := WORD#100, expectedHasChanged := FALSE)}
+        {Test(signalValue := WORD#100, newSignalValue := WORD#101, expectedHasChanged := TRUE)}
+        METHOD PUBLIC CheckHasChanged
+            VAR_INPUT
+                signalValue : WORD;
+                newSignalValue : WORD;
+                expectedHasChanged : BOOL;
+            END_VAR
+
+            o.ReadCyclic(value := signalValue, valid := TRUE, default := WORD#16#0);
+            o.ReadCyclic(value := newSignalValue, valid := TRUE, default := WORD#16#0);
+            Assert.Equal(expected := expectedHasChanged, actual := o.HasChanged());
+        END_METHOD
     END_CLASS
 END_NAMESPACE

@@ -168,8 +168,30 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             AxUnit.Assert.Equal(expected := TRUE, actual := o.Q());
 
         END_METHOD
-        
-        
+
+        //-----------------------------------------------------------
+        // test HasChanged
+        //-----------------------------------------------------------
+        {Test}
+        METHOD PUBLIC HasChanged
+
+            o.ReadCyclic(signal := TRUE, valid := TRUE, default := FALSE);
+            o.ReadCyclic(signal := TRUE, valid := TRUE, default := FALSE);
+            AxUnit.Assert.Equal(expected := FALSE, actual := o.HasChanged());
+
+            o.ReadCyclic(signal := FALSE, valid := TRUE, default := FALSE);
+            o.ReadCyclic(signal := FALSE, valid := TRUE, default := FALSE);
+            AxUnit.Assert.Equal(expected := FALSE, actual := o.HasChanged());
+
+            o.ReadCyclic(signal := FALSE, valid := TRUE, default := FALSE);
+            o.ReadCyclic(signal := TRUE, valid := TRUE, default := FALSE);
+            AxUnit.Assert.Equal(expected := TRUE, actual := o.HasChanged());
+
+            o.ReadCyclic(signal := TRUE, valid := TRUE, default := FALSE);
+            o.ReadCyclic(signal := FALSE, valid := TRUE, default := FALSE);
+            AxUnit.Assert.Equal(expected := TRUE, actual := o.HasChanged());
+            
+        END_METHOD
 
     END_CLASS
 END_NAMESPACE
