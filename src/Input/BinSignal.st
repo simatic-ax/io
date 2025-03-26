@@ -1,5 +1,5 @@
 NAMESPACE Simatic.Ax.IO.Input
-    CLASS BinSignal EXTENDS InputBase IMPLEMENTS IBinSignal
+    CLASS BinSignal EXTENDS InputBase IMPLEMENTS ItfBinSignal
         VAR PUBLIC
             invert : BOOL := FALSE;
         END_VAR
