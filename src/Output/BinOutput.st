@@ -2,7 +2,7 @@ NAMESPACE Simatic.Ax.IO.Output
     
     /// Class BinOutput
     /// An OOP concept to handle digital outputs as a own object
-    CLASS BinOutput IMPLEMENTS IBinOutput         
+    CLASS BinOutput IMPLEMENTS ItfBinOutput         
         VAR
             _state : BOOL;  // internal status 
             _stateOld : BOOL := FALSE;
