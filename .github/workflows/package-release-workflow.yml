@@ -70,36 +70,3 @@ jobs:
         with:
           registries: |
             https://npm.pkg.github.com
-
-      # [Optional]: The following steps are not mandatory and are highly depending on your release workflow
-      # - name: Update Changelog and Create PR
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}  # Hier das neue PAT
-      #     RELEASE_BODY: ${{ github.event.release.body }}
-      #     RELEASE_TAG: ${{ github.event.release.tag_name }}
-      #     RELEASE_DATE: ${{ github.event.release.published_at }}
-      #     TARGET_BRANCH: ${{ github.event.release.target_commitish }}
-      #   run: |
-      #     chmod +x .github/workflows/update-changelog-pr.sh
-      #     .github/workflows/update-changelog-pr.sh
-      
-      - name: Update major version tag
-        if: ${{ success() }}
-        run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            
-          VERSION=${{ github.event.release.tag_name }}
-          if echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
-            MAJOR_VERSION="v$(echo $VERSION | cut -d. -f1)"
-            echo "Updating major version tag: $MAJOR_VERSION"
-            git push origin :refs/tags/$MAJOR_VERSION || true
-            git tag -f $MAJOR_VERSION
-            git push origin $MAJOR_VERSION --force
-            echo "✅ Major version tag updated successfully"
-          else
-            echo "❌ Error: Invalid version format: '$VERSION'"
-            echo "Expected format: X.Y.Z (e.g., 1.2.3)"
-            exit 1
-          fi
