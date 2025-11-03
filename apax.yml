@@ -28,11 +28,9 @@ devDependencies:
   '@ax/sdk': ^2504.0.0
   "@simatic-ax/snippetscollection": ^1.0.0
   "@ax/axunit-mocking": 8.0.33
-  
 dependencies:
   "@ax/system-timer": ^10.0.24
   "@ax/system-math": ^10.0.24
-  "@simatic-ax/mocks": ^3.0.2
 # Files, which will be shipped with the library
 files:
   - 'README.md'

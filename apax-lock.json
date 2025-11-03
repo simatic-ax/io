@@ -8,8 +8,7 @@
     "version": "0.0.0-placeholder",
     "dependencies": {
       "@ax/system-timer": "^10.0.24",
-      "@ax/system-math": "^10.0.24",
-      "@simatic-ax/mocks": "^3.0.2"
+      "@ax/system-math": "^10.0.24"
     },
     "devDependencies": {
       "@ax/sdk": "^2504.0.0",
@@ -750,16 +749,6 @@
         "x64"
       ],
       "dependencies": {}
-    },
-    "@simatic-ax/mocks": {
-      "name": "@simatic-ax/mocks",
-      "version": "3.0.2",
-      "integrity": "sha512-APoo/hH8j2b4aD6KOJ+0NLbzLQ32QAX3og0Zqp8WenHjRZDjLFutsl5mKMfN0J7jUOz6RYAFfGyxpvcgNP2D1Q==",
-      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/mocks/3.0.2/e03f1d0cc764c8776cb78a6db6c2c93522054bcf",
-      "dependencies": {
-        "@ax/mocking-library": "^8.0.33",
-        "@ax/system-timer": "^10.0.24"
-      }
     },
     "@simatic-ax/snippetscollection": {
       "name": "@simatic-ax/snippetscollection",
