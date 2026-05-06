@@ -3,16 +3,21 @@ USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Output.Test
 
+    /// Test fixture for LRealOutput class
+    /// Verifies long real (LREAL) double precision floating-point output functionality including:
+    /// - Setting output values via SetValue()
+    /// - Writing values cyclically via WriteCyclic() as LWORD bit pattern
+    /// - Change detection via HasChanged()
     {TestFixture}
     CLASS TestLRealOutputSetValueClass
         VAR
-            o : LRealOutput;
-            oHasChanged : LRealOutput;
+            o : LRealOutput;  // Test object for LRealOutput
+            oHasChanged : LRealOutput;  // Test object for change detection
         END_VAR
 
-        // -----------------------------------------------------------
-        // test SetQ(value)
-        // -----------------------------------------------------------
+        /// Parameterized test for setting and writing LREAL output values
+        /// Verifies SetValue() and WriteCyclic() work correctly
+        /// Output is converted to LWORD bit pattern for hardware compatibility
         {Test(value := LREAL#0.0, actual := LREAL#0.0)}
         {Test(value := LREAL#1.0, actual := LREAL#1.0)}
         METHOD PUBLIC TestOutputSetValue
@@ -30,7 +35,8 @@ NAMESPACE Simatic.Ax.IO.Output.Test
             Assert.Equal(expected := _expect, actual := TO_LWORD(actual));
         END_METHOD
 
-
+        /// Test change detection functionality
+        /// Verifies HasChanged() returns TRUE after value changes
         {Test}
         METHOD PUBLIC TestOutputHasChanged                      
             VAR_TEMP

@@ -1,29 +1,40 @@
 USING AxUnit;
 USING Simatic.Ax.IO.Input;
 USING System.Timer;
-//USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Input.Test
 
+    /// Test fixture for BinSignal class
+    /// Verifies binary signal input functionality including:
+    /// - Signal reading and state management
+    /// - Edge detection (rising and falling edges)
+    /// - Signal inversion
+    /// - Quality status (QBad) handling
+    /// - Change detection
     {TestFixture}
     CLASS BinSignalTest
         VAR
-            o : BinSignal;   
-            oStateLess : BinSignalExt;     
+            o : BinSignal;   // Test object for BinSignal
+            oStateLess : BinSignalExt;  // Stateless test object
         END_VAR
 
+        /// Setup method called before each test
+        /// Initializes test objects to ensure clean state
         {TestSetup}
         METHOD PUBLIC MyTestSetup
-        // Will be called before MyTest_A AND before Test_B are executed
             o := oStateLess;
         END_METHOD
 
+        /// Test basic signal reading - expects TRUE output when TRUE signal is read
         {Test}
         METHOD PUBLIC TestQ_And_expect_true
             o.ReadCyclic(signal := TRUE);
             Assert.Equal(expected := TRUE, actual := o.Q());
         END_METHOD
 
+        /// Parameterized test for signal reading with different valid/invalid combinations
+        /// Tests all combinations of signal value, validity flag, and default value
+        /// Verifies that Q() returns correct value and QBad() reflects validity status
         {Test(isignal := FALSE, ienable := FALSE, idefault := FALSE, iexpq := FALSE, iexpqbad := TRUE)}
         {Test(isignal := FALSE, ienable := FALSE, idefault := TRUE, iexpq := TRUE, iexpqbad := TRUE)}
         {Test(isignal := FALSE, ienable := TRUE, idefault := FALSE, iexpq := FALSE, iexpqbad := FALSE)}
@@ -34,7 +45,7 @@ NAMESPACE Simatic.Ax.IO.Input.Test
         {Test(isignal := TRUE, ienable := TRUE, idefault := FALSE, iexpq := TRUE, iexpqbad := FALSE)}
         {Test(isignal := TRUE, ienable := TRUE, idefault := TRUE, iexpq := TRUE, iexpqbad := FALSE)}
     
-        METHOD PUBLIC  execute
+        METHOD PUBLIC execute
             VAR_INPUT
                 isignal : BOOL;
                 ienable : BOOL;
@@ -48,11 +59,10 @@ NAMESPACE Simatic.Ax.IO.Input.Test
 
         END_METHOD
 
+        /// Parameterized test for edge detection (rising and falling edges)
+        /// Verifies QRis() and QFal() correctly detect signal transitions
         {Test(isignal := TRUE, ienable := TRUE, idefault := FALSE, iexpq := TRUE, iexpqris := TRUE, iexpqfal := FALSE, itestfallingedge := FALSE)}
         {Test(isignal := FALSE, ienable := TRUE, idefault := FALSE, iexpq := FALSE, iexpqris := FALSE, iexpqfal := TRUE, itestfallingedge := TRUE)}
-        //-----------------------------------------------------------
-        // test SetOff
-        //-----------------------------------------------------------
         METHOD PUBLIC QRis2
             VAR_INPUT
                 isignal : BOOL;
@@ -81,11 +91,9 @@ NAMESPACE Simatic.Ax.IO.Input.Test
 
         END_METHOD
 
-        //-----------------------------------------------------------
-        // test Q
-        //-----------------------------------------------------------
+        /// Test Q() method - verifies signal state reading and QBad status
         {Test}
-        METHOD PUBLIC  Q
+        METHOD PUBLIC Q
             VAR_TEMP
             END_VAR        
             AxUnit.Assert.Equal(expected := FALSE, actual := o.Q());
@@ -94,9 +102,7 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             AxUnit.Assert.Equal(expected := FALSE, actual := o.QBad());
         END_METHOD
 
-        //-----------------------------------------------------------
-        // test QRis
-        //-----------------------------------------------------------
+        /// Test QRis() method - verifies rising edge detection with and without inversion
         {Test}
         METHOD PUBLIC QRis
             AxUnit.Assert.Equal(expected := FALSE, actual := o.QRis());
@@ -114,9 +120,7 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             AxUnit.Assert.Equal(expected := FALSE, actual := o.QRis());
 
         END_METHOD
-        //-----------------------------------------------------------
-        // test QFal
-        //-----------------------------------------------------------
+        /// Test QFal() method - verifies falling edge detection with and without inversion
         {Test}
         METHOD PUBLIC QFal
 
@@ -138,9 +142,8 @@ NAMESPACE Simatic.Ax.IO.Input.Test
             
         END_METHOD
 
-        //-----------------------------------------------------------
-        // test QBad
-        //-----------------------------------------------------------
+        /// Test QBad() method - verifies quality status handling with valid/invalid signals
+        /// Tests default value behavior and signal inversion with quality status
         {Test}
         METHOD PUBLIC QBad
 
@@ -169,9 +172,7 @@ NAMESPACE Simatic.Ax.IO.Input.Test
 
         END_METHOD
 
-        //-----------------------------------------------------------
-        // test HasChanged
-        //-----------------------------------------------------------
+        /// Test HasChanged() method - verifies change detection between consecutive reads
         {Test}
         METHOD PUBLIC HasChanged
 
