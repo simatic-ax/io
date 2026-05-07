@@ -3,7 +3,7 @@ NAMESPACE Simatic.Ax.IO.Output
     /// Interface for binary output signal handling
     /// Defines the contract for controlling binary output signals
     /// Implementations provide methods to set, toggle, and query output state
-    INTERFACE ItfBinOutput
+    INTERFACE IBinOutput
         
         /// Set the output to a specific boolean value
         /// value: TRUE to turn output on, FALSE to turn output off
@@ -35,7 +35,7 @@ NAMESPACE Simatic.Ax.IO.Output
     /// Provides a safe default implementation that does nothing
     /// Use this to avoid null pointer checks when a binary output is optional
     CLASS NullBinOutput
-        IMPLEMENTS ItfBinOutput
+        IMPLEMENTS IBinOutput
 
         /// Set output to specific value (no operation for null object)
         /// value: Ignored

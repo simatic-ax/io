@@ -4,7 +4,7 @@ NAMESPACE Simatic.Ax.IO.Input
     /// Provides reading of digital input signals with automatic edge detection (rising/falling)
     /// Supports signal inversion and quality status monitoring
     /// Must be called cyclically via ReadCyclic() method
-    CLASS BinSignal EXTENDS InputBase IMPLEMENTS ItfBinSignal
+    CLASS BinSignal EXTENDS InputBase IMPLEMENTS IBinSignal
         VAR PUBLIC
             invert : BOOL := FALSE; // When TRUE, inverts the input signal (TRUE becomes FALSE and vice versa)
         END_VAR

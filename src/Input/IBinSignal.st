@@ -3,7 +3,7 @@ NAMESPACE Simatic.Ax.IO.Input
     /// Interface for binary signal input handling
     /// Defines the contract for reading binary input signals with edge detection and quality status
     /// Implementations provide access to signal state, rising/falling edges, and validity information
-    INTERFACE ItfBinSignal
+    INTERFACE IBinSignal
         
         /// Returns the current state of the binary signal
         /// RETURN: TRUE if signal is active, FALSE if signal is inactive
@@ -32,7 +32,7 @@ NAMESPACE Simatic.Ax.IO.Input
     /// Provides a safe default implementation that returns FALSE for all methods
     /// Use this to avoid null pointer checks when a binary signal is optional
     CLASS NullBinSignal
-        IMPLEMENTS ItfBinSignal
+        IMPLEMENTS IBinSignal
 
         /// Returns the current state (always FALSE for null object)
         /// RETURN: FALSE

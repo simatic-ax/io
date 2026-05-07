@@ -4,7 +4,7 @@ NAMESPACE Simatic.Ax.IO.Output
     /// OOP-based approach to handle digital outputs as independent objects
     /// Provides state management, edge detection (switched on/off), and change tracking
     /// Must be called cyclically via WriteCyclic() method
-    CLASS BinOutput IMPLEMENTS ItfBinOutput
+    CLASS BinOutput IMPLEMENTS IBinOutput
         VAR
             _state : BOOL;  // Internal state of the output
             _stateOld : BOOL := FALSE; // Previous state for edge detection
