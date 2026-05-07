@@ -1,23 +1,29 @@
 USING AxUnit;
 USING Simatic.Ax.IO.Input;
 USING System.Timer;
-//USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Input.Test
 
+    /// Test fixture for BinSignalExt class
+    /// Verifies extended binary signal functionality including:
+    /// - All BinSignal features (signal reading, edge detection, inversion, quality status)
+    /// - On-delay and off-delay timing functionality
+    /// - Time-based signal filtering
     {TestFixture}
     CLASS BinSignalExtTest
         VAR
-            o : BinSignalExt;
-            oStateLess : BinSignalExt;  
+            o : BinSignalExt;  // Test object for BinSignalExt
+            oStateLess : BinSignalExt;  // Stateless test object
         END_VAR
 
-        // This method will be called before each test method
+        /// Setup method called before each test
+        /// Initializes test objects to ensure clean state
         {TestSetup}
         METHOD PUBLIC MyTestSetup
             o := oStateLess;
         END_METHOD
 
+        /// Test basic signal reading - expects TRUE output when TRUE signal is read
         {Test}
         METHOD PUBLIC TestQ_And_expect_true
             o.ReadCyclic(signal := TRUE);

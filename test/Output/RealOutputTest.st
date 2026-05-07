@@ -3,16 +3,21 @@ USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Output.Test
 
+    /// Test fixture for RealOutput class
+    /// Verifies real (REAL) floating-point output functionality including:
+    /// - Setting output values via SetValue()
+    /// - Writing values cyclically via WriteCyclic() as DWORD bit pattern
+    /// - Change detection via HasChanged()
     {TestFixture}
     CLASS TestRealOutputSetValueClass
         VAR
-            o : RealOutput;
-            oHasChanged : RealOutput;
+            o : RealOutput;  // Test object for RealOutput
+            oHasChanged : RealOutput;  // Test object for change detection
         END_VAR
 
-        // -----------------------------------------------------------
-        // test SetQ(value)
-        // -----------------------------------------------------------
+        /// Parameterized test for setting and writing REAL output values
+        /// Verifies SetValue() and WriteCyclic() work correctly
+        /// Output is converted to DWORD bit pattern for hardware compatibility
         {Test(value := REAL#0.0, actual := REAL#0.0)}
         {Test(value := REAL#1.0, actual := REAL#1.0)}
         METHOD PUBLIC TestWordOutputSetValue
@@ -30,7 +35,8 @@ NAMESPACE Simatic.Ax.IO.Output.Test
             Assert.Equal(expected := _expect, actual := TO_DWORD(actual));
         END_METHOD
 
-
+        /// Test change detection functionality
+        /// Verifies HasChanged() returns TRUE after value changes
         {Test}
         METHOD PUBLIC TestRealOutputHasChanged                      
             VAR_TEMP

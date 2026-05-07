@@ -3,16 +3,20 @@ USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Output.Test
 
+    /// Test fixture for IntOutput class
+    /// Verifies integer (INT) output functionality including:
+    /// - Setting output values via SetValue()
+    /// - Writing values cyclically via WriteCyclic()
+    /// - Change detection via HasChanged()
     {TestFixture}
     CLASS TestIntOutputSetValueClass
         VAR
-            o : IntOutput;
-            oHasChanged : IntOutput;
+            o : IntOutput;  // Test object for IntOutput
+            oHasChanged : IntOutput;  // Test object for change detection
         END_VAR
 
-        // -----------------------------------------------------------
-        // test SetQ(value)
-        // -----------------------------------------------------------
+        /// Parameterized test for setting and writing INT output values
+        /// Verifies SetValue() and WriteCyclic() work correctly
         {Test(value := 0, actual := 0)}
         {Test(value := 1, actual := 1)}
         METHOD PUBLIC TestOutputSetValue
@@ -31,8 +35,10 @@ NAMESPACE Simatic.Ax.IO.Output.Test
         END_METHOD
 
 
+        /// Test change detection functionality
+        /// Verifies HasChanged() returns TRUE after value changes
         {Test}
-        METHOD PUBLIC TestOutputHasChanged                      
+        METHOD PUBLIC TestOutputHasChanged
             VAR_TEMP
                 value : INT;
             END_VAR

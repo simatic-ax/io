@@ -3,16 +3,20 @@ USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Output.Test
 
+    /// Test fixture for DWordOutput class
+    /// Verifies double word (DWORD) output functionality including:
+    /// - Setting output values via SetValue()
+    /// - Writing values cyclically via WriteCyclic()
+    /// - Change detection via HasChanged()
     {TestFixture}
     CLASS TestDWordOutputSetValueClass
         VAR
-            o : DWordOutput;
-            oHasChanged : DWordOutput;
+            o : DWordOutput;  // Test object for DWordOutput
+            oHasChanged : DWordOutput;  // Test object for change detection
         END_VAR
 
-        // -----------------------------------------------------------
-        // test SetQ(value)
-        // -----------------------------------------------------------
+        /// Parameterized test for setting and writing DWORD output values
+        /// Verifies SetValue() and WriteCyclic() work correctly
         {Test(value := DWORD#16#0, actual := DWORD#16#0)}
         {Test(value := DWORD#16#1, actual := DWORD#16#1)}
         METHOD PUBLIC TestOutputSetValue
@@ -30,7 +34,8 @@ NAMESPACE Simatic.Ax.IO.Output.Test
             Assert.Equal(expected := _expect, actual := actual);
         END_METHOD
 
-
+        /// Test change detection functionality
+        /// Verifies HasChanged() returns TRUE after value changes
         {Test}
         METHOD PUBLIC TestOutputHasChanged                      
             VAR_TEMP

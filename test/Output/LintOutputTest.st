@@ -3,16 +3,20 @@ USING AxUnit;
 
 NAMESPACE Simatic.Ax.IO.Output.Test
 
+    /// Test fixture for LIntOutput class
+    /// Verifies long integer (LINT) output functionality including:
+    /// - Setting output values via SetValue()
+    /// - Writing values cyclically via WriteCyclic()
+    /// - Change detection via HasChanged()
     {TestFixture}
     CLASS TestLIntOutputSetValueClass
         VAR
-            o : LIntOutput;
-            oHasChanged : LIntOutput;
+            o : LIntOutput;  // Test object for LIntOutput
+            oHasChanged : LIntOutput;  // Test object for change detection
         END_VAR
 
-        // -----------------------------------------------------------
-        // test SetQ(value)
-        // -----------------------------------------------------------
+        /// Parameterized test for setting and writing LINT output values
+        /// Verifies SetValue() and WriteCyclic() work correctly
         {Test(value := LINT#0, actual := LINT#0)}
         {Test(value := LINT#1, actual := LINT#1)}
         METHOD PUBLIC TestOutputSetValue
@@ -30,7 +34,8 @@ NAMESPACE Simatic.Ax.IO.Output.Test
             Assert.Equal(expected := _expect, actual := actual);
         END_METHOD
 
-
+        /// Test change detection functionality
+        /// Verifies HasChanged() returns TRUE after value changes
         {Test}
         METHOD PUBLIC TestOutputHasChanged                      
             VAR_TEMP
