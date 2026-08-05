@@ -67,7 +67,7 @@ jobs:
             https://npm.pkg.github.com/,${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish apax package
-        uses: simatic-ax/actions/apax-publish@v3
+        uses: simatic-ax/actions/apax-publish@v4
         with:
           registries: |
             https://npm.pkg.github.com
