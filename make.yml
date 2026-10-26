@@ -1,0 +1,9 @@
+MakeConfiguration:
+  - Name: Debug
+    Type: lib
+    Targets:
+      - s7
+      - llvm
+    StCompiler:
+      LoggingVerbosity: Debug
+      Debug: true
